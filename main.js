@@ -109,7 +109,7 @@ const translations = {
     nav_amenities: "Fasilitas",
     nav_contact:   "Kontak",
 
-    hero_eyebrow: "Ekovillage · Jawa, Indonesia",
+    hero_eyebrow: "Eco-Village · Yogyakarta, Indonesia",
     hero_sub:     "Koleksi privat vila berkelanjutan di mana arsitektur menyatu dengan alam — dirancang bagi mereka yang merindukan ketenangan.",
     hero_cta:     "Hubungi Kami",
 
