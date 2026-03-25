@@ -738,6 +738,30 @@ section {
   gap: 1rem;
 }
 
+.contact-map-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: .8rem;
+  font-size: .82rem;
+  font-weight: 400;
+  color: var(--accent);
+  transition: opacity .25s;
+}
+
+.contact-map-link:hover {
+  opacity: .7;
+}
+
+.contact-group-label {
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: .5rem;
+  margin-bottom: -.25rem;
+}
+
 .contact-option-btn {
   display: flex;
   align-items: center;
