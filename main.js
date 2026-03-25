@@ -5,19 +5,21 @@
 /* ── TRANSLATIONS ── */
 const translations = {
   en: {
-    nav_concept:   "Concept",
-    nav_about:     "Story",
-    nav_villas:    "Villas",
-    nav_amenities: "What's Here",
-    nav_contact:   "Contact",
+    nav_concept: "Concept",
+    nav_about: "Story",
+    nav_villas: "Villas",
+    nav_amenities: "Amenities",
+    nav_experience: "Experience",
+    nav_booking: "Reservation",
+    nav_contact: "Contact",
 
     hero_eyebrow: "Eco-Village · Yogyakarta, Indonesia",
-    hero_sub:     "Six villas along the river in Nglanggeran — surrounded by plantations, open spaces, and the quiet rhythm of village life.",
-    hero_cta:     "Inquire Now",
+    hero_sub: "Six villas along the river in Nglanggeran — surrounded by plantations, open spaces, and the quiet rhythm of village life.",
+    hero_cta: "Inquire Now",
 
     concept_label: "Our Concept",
     concept_title: "Stay by the river, wake up to nature.",
-    concept_body:  "Nglanggeran Eco-Village sits on the edge of a river in Gunung Kidul's highlands. We built the villas to fit the land — not the other way around. The river runs right through the property, and the surrounding plantations give the whole place its character.",
+    concept_body: "Nglanggeran Eco-Village sits on the edge of a river in Gunung Kidul's highlands. We built the villas to fit the land — not the other way around. The river runs right through the property, and the surrounding plantations give the whole place its character.",
     concept_body2: "It's a place for gatherings, retreats, or just getting away from the city for a while. Simple as that.",
 
     about_label: "Our Story",
@@ -33,23 +35,23 @@ const translations = {
 
     am_label: "What's Here",
     am_title: "Simple things, done right.",
-    am_sub:   "We don't try to be everything. Here's what we've got, and it's enough.",
+    am_sub: "We don't try to be everything. Here's what we've got, and it's enough.",
     am1_title: "Riverfront Villas",
-    am1_desc:  "Six villas spread along the river, each with its own layout and feel. You'll hear the water from your bed. Sleeps two to six guests per villa.",
+    am1_desc: "Six villas spread along the river, each with its own layout and feel. You'll hear the water from your bed. Sleeps two to six guests per villa.",
     am2_title: "River Access",
-    am2_desc:  "The river runs right through the property. Step out of your villa and you're there — good for a morning dip or just sitting by the water with a coffee.",
+    am2_desc: "The river runs right through the property. Step out of your villa and you're there — good for a morning dip or just sitting by the water with a coffee.",
     am3_title: "Local Dining",
-    am3_desc:  "Meals made with ingredients from the surrounding plantations and local markets. Nothing complicated — just honest Javanese food served on the terrace by the river.",
+    am3_desc: "Meals made with ingredients from the surrounding plantations and local markets. Nothing complicated — just honest Javanese food served on the terrace by the river.",
     am4_title: "Plantation Grounds",
-    am4_desc:  "The property sits among cacao, clove, and fruit tree plantations. Walk through the gardens, pick a rambutan, or just enjoy the shade. It's all open to guests.",
+    am4_desc: "The property sits among cacao, clove, and fruit tree plantations. Walk through the gardens, pick a rambutan, or just enjoy the shade. It's all open to guests.",
     am5_title: "Multi-Purpose Space",
-    am5_desc:  "A flexible open area for gatherings, small events, workshops, or team retreats. Bring your own agenda — we'll handle the space and the setup.",
+    am5_desc: "A flexible open area for gatherings, small events, workshops, or team retreats. Bring your own agenda — we'll handle the space and the setup.",
     am6_title: "Village Life",
-    am6_desc:  "Walk through the village, visit the local market, or chat with the neighbors. This isn't a resort — it's a real place, and that's what makes it interesting.",
+    am6_desc: "Walk through the village, visit the local market, or chat with the neighbors. This isn't a resort — it's a real place, and that's what makes it interesting.",
 
     villas_label: "The Collection",
     villas_title: "Six villas, one river.",
-    villas_sub:   "Each villa has its own character — different layout, different view — but they all share the same river and the same quiet.",
+    villas_sub: "Each villa has its own character — different layout, different view — but they all share the same river and the same quiet.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
     villa3: "Villa Sengon",
@@ -86,46 +88,48 @@ const translations = {
 
     exp_label: "What It's Like",
     exp_title: "Slow days, good company.",
-    exp_body:  "No schedule, no program. Just the river, the gardens, and as much time as you want. Wake up when you feel like it, eat when you're hungry, explore when you're curious.",
+    exp_body: "No schedule, no program. Just the river, the gardens, and as much time as you want. Wake up when you feel like it, eat when you're hungry, explore when you're curious.",
     feat1: "Riverside villas with direct water access",
     feat2: "Plantation walks through cacao, clove, and fruit trees",
     feat3: "Multi-purpose space for events and gatherings",
     feat4: "Local Javanese meals on the terrace",
     feat5: "Village walks and local market visits",
 
-    contact_label:          "Get in Touch",
-    contact_title:          "Let's connect.",
-    contact_body:           "Got questions about the villas, availability, or events? Reach out — we're happy to help.",
+    contact_label: "Get in Touch",
+    contact_title: "Let's connect.",
+    contact_body: "Got questions about the villas, availability, or events? Reach out — we're happy to help.",
     contact_location_label: "Location",
     contact_location_value: "Karang Sari, Nglanggeran, Kec. Patuk, Kabupaten Gunung Kidul, Yogyakarta",
-    contact_map_link:       "Come find us on the map →",
-    contact_cs_label:       "Customer Service",
-    contact_social_label:   "Social Media",
+    contact_map_link: "Come find us on the map →",
+    contact_cs_label: "Customer Service",
+    contact_social_label: "Social Media",
     copt_email_label: "Email us",
-    copt_wa_label:    "WhatsApp",
-    copt_ig_label:    "Instagram",
+    copt_wa_label: "WhatsApp",
+    copt_ig_label: "Instagram",
     copt_tiktok_label: "TikTok",
 
-    footer_copy:    "© 2026 Nglanggeran Eco-Village. All rights reserved.",
-    footer_terms:   "Terms & Service",
+    footer_copy: "© 2026 Nglanggeran Eco-Village. All rights reserved.",
+    footer_terms: "Terms & Service",
     footer_contact: "Contact",
-    terms_title:    "Terms of Service",
+    terms_title: "Terms of Service",
   },
 
   id: {
-    nav_concept:   "Konsep",
-    nav_about:     "Cerita",
-    nav_villas:    "Vila",
+    nav_concept: "Konsep",
+    nav_about: "Cerita",
+    nav_villas: "Vila",
     nav_amenities: "Fasilitas",
-    nav_contact:   "Kontak",
+    nav_experience: "Pengalaman",
+    nav_booking: "Reservasi",
+    nav_contact: "Kontak",
 
     hero_eyebrow: "Eco-Village · Yogyakarta, Indonesia",
-    hero_sub:     "Enam vila di tepi sungai Nglanggeran — dikelilingi perkebunan, ruang terbuka, dan kehidupan desa yang tenang.",
-    hero_cta:     "Hubungi Kami",
+    hero_sub: "Enam vila di tepi sungai Nglanggeran — dikelilingi perkebunan, ruang terbuka, dan kehidupan desa yang tenang.",
+    hero_cta: "Hubungi Kami",
 
     concept_label: "Konsep Kami",
     concept_title: "Tinggal di tepi sungai, bangun bersama alam.",
-    concept_body:  "Nglanggeran Eco-Village berada di tepi sungai di dataran tinggi Gunung Kidul. Vila-vila dibangun menyesuaikan lahan — bukan sebaliknya. Sungai mengalir tepat di tengah properti, dan perkebunan di sekitarnya memberi karakter tersendiri.",
+    concept_body: "Nglanggeran Eco-Village berada di tepi sungai di dataran tinggi Gunung Kidul. Vila-vila dibangun menyesuaikan lahan — bukan sebaliknya. Sungai mengalir tepat di tengah properti, dan perkebunan di sekitarnya memberi karakter tersendiri.",
     concept_body2: "Tempat untuk berkumpul, retreat, atau sekadar melepas penat dari kota. Sesederhana itu.",
 
     about_label: "Kisah Kami",
@@ -141,23 +145,23 @@ const translations = {
 
     am_label: "Apa Saja di Sini",
     am_title: "Hal sederhana, dilakukan dengan benar.",
-    am_sub:   "Kami tidak berusaha jadi segalanya. Inilah yang kami punya, dan ini cukup.",
+    am_sub: "Kami tidak berusaha jadi segalanya. Inilah yang kami punya, dan ini cukup.",
     am1_title: "Vila Tepi Sungai",
-    am1_desc:  "Enam vila tersebar di sepanjang sungai, masing-masing dengan tata letak dan suasana sendiri. Suara air terdengar dari tempat tidur. Menampung dua hingga enam tamu per vila.",
+    am1_desc: "Enam vila tersebar di sepanjang sungai, masing-masing dengan tata letak dan suasana sendiri. Suara air terdengar dari tempat tidur. Menampung dua hingga enam tamu per vila.",
     am2_title: "Akses Sungai",
-    am2_desc:  "Sungai mengalir tepat di tengah properti. Keluar dari vila dan kamu sudah di sana — pas untuk berendam pagi atau sekadar duduk di tepi air dengan kopi.",
+    am2_desc: "Sungai mengalir tepat di tengah properti. Keluar dari vila dan kamu sudah di sana — pas untuk berendam pagi atau sekadar duduk di tepi air dengan kopi.",
     am3_title: "Masakan Lokal",
-    am3_desc:  "Makanan dari bahan perkebunan sekitar dan pasar lokal. Tidak ribet — masakan Jawa yang jujur, disajikan di teras tepi sungai.",
+    am3_desc: "Makanan dari bahan perkebunan sekitar dan pasar lokal. Tidak ribet — masakan Jawa yang jujur, disajikan di teras tepi sungai.",
     am4_title: "Area Perkebunan",
-    am4_desc:  "Properti ini dikelilingi perkebunan kakao, cengkeh, dan pohon buah. Jalan-jalan di kebun, petik rambutan, atau nikmati teduhnya. Semuanya terbuka untuk tamu.",
+    am4_desc: "Properti ini dikelilingi perkebunan kakao, cengkeh, dan pohon buah. Jalan-jalan di kebun, petik rambutan, atau nikmati teduhnya. Semuanya terbuka untuk tamu.",
     am5_title: "Ruang Serbaguna",
-    am5_desc:  "Area terbuka yang fleksibel untuk kumpul-kumpul, acara kecil, workshop, atau retreat tim. Bawa acaramu — kami yang urus tempatnya.",
+    am5_desc: "Area terbuka yang fleksibel untuk kumpul-kumpul, acara kecil, workshop, atau retreat tim. Bawa acaramu — kami yang urus tempatnya.",
     am6_title: "Kehidupan Desa",
-    am6_desc:  "Jalan-jalan di desa, kunjungi pasar lokal, atau ngobrol dengan tetangga. Ini bukan resor — ini tempat nyata, dan itu yang bikin menarik.",
+    am6_desc: "Jalan-jalan di desa, kunjungi pasar lokal, atau ngobrol dengan tetangga. Ini bukan resor — ini tempat nyata, dan itu yang bikin menarik.",
 
     villas_label: "Koleksi Vila",
     villas_title: "Enam vila, satu sungai.",
-    villas_sub:   "Setiap vila punya karakternya sendiri — beda tata letak, beda pemandangan — tapi semuanya berbagi sungai dan ketenangan yang sama.",
+    villas_sub: "Setiap vila punya karakternya sendiri — beda tata letak, beda pemandangan — tapi semuanya berbagi sungai dan ketenangan yang sama.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
     villa3: "Villa Sengon",
@@ -194,30 +198,30 @@ const translations = {
 
     exp_label: "Seperti Apa Rasanya",
     exp_title: "Hari santai, teman baik.",
-    exp_body:  "Tidak ada jadwal, tidak ada program. Hanya sungai, kebun, dan waktu sebanyak yang kamu mau. Bangun sesukamu, makan saat lapar, jelajah saat penasaran.",
+    exp_body: "Tidak ada jadwal, tidak ada program. Hanya sungai, kebun, dan waktu sebanyak yang kamu mau. Bangun sesukamu, makan saat lapar, jelajah saat penasaran.",
     feat1: "Vila tepi sungai dengan akses langsung ke air",
     feat2: "Jalan-jalan perkebunan kakao, cengkeh, dan buah",
     feat3: "Ruang serbaguna untuk acara dan kumpul-kumpul",
     feat4: "Masakan Jawa lokal di teras",
     feat5: "Jalan-jalan desa dan kunjungan pasar lokal",
 
-    contact_label:          "Hubungi Kami",
-    contact_title:          "Mari terhubung.",
-    contact_body:           "Punya pertanyaan soal vila, ketersediaan, atau acara? Hubungi kami — kami senang membantu.",
+    contact_label: "Hubungi Kami",
+    contact_title: "Mari terhubung.",
+    contact_body: "Punya pertanyaan soal vila, ketersediaan, atau acara? Hubungi kami — kami senang membantu.",
     contact_location_label: "Lokasi",
     contact_location_value: "Karang Sari, Nglanggeran, Kec. Patuk, Kabupaten Gunung Kidul, Yogyakarta",
-    contact_map_link:       "Temukan kami di peta →",
-    contact_cs_label:       "Layanan Pelanggan",
-    contact_social_label:   "Media Sosial",
+    contact_map_link: "Temukan kami di peta →",
+    contact_cs_label: "Layanan Pelanggan",
+    contact_social_label: "Media Sosial",
     copt_email_label: "Kirim Email",
-    copt_wa_label:    "WhatsApp",
-    copt_ig_label:    "Instagram",
+    copt_wa_label: "WhatsApp",
+    copt_ig_label: "Instagram",
     copt_tiktok_label: "TikTok",
 
-    footer_copy:    "© 2026 Nglanggeran Eco-Village. Seluruh hak cipta dilindungi.",
-    footer_terms:   "Syarat & Ketentuan",
+    footer_copy: "© 2026 Nglanggeran Eco-Village. Seluruh hak cipta dilindungi.",
+    footer_terms: "Syarat & Ketentuan",
     footer_contact: "Kontak",
-    terms_title:    "Syarat & Ketentuan",
+    terms_title: "Syarat & Ketentuan",
   }
 };
 
@@ -300,8 +304,8 @@ const termsContent = {
 };
 
 /* ── LANGUAGE ── */
-const deviceLang   = (navigator.language || '').toLowerCase().startsWith('id') ? 'id' : 'en';
-let   currentLang  = deviceLang;
+const deviceLang = (navigator.language || '').toLowerCase().startsWith('id') ? 'id' : 'en';
+let currentLang = deviceLang;
 
 function applyLang(lang) {
   const t = translations[lang];
@@ -322,16 +326,16 @@ document.getElementById('langBtn').addEventListener('click', () => {
 applyLang(currentLang);
 
 /* ── THEME ── */
-const html     = document.documentElement;
-const iconSun  = document.getElementById('iconSun');
+const html = document.documentElement;
+const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
-const mq       = window.matchMedia('(prefers-color-scheme: dark)');
-let   currentTheme = mq.matches ? 'dark' : 'light';
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+let currentTheme = mq.matches ? 'dark' : 'light';
 
 function applyTheme(t) {
   currentTheme = t;
   html.setAttribute('data-theme', t);
-  iconSun.style.display  = t === 'dark'  ? 'block' : 'none';
+  iconSun.style.display = t === 'dark' ? 'block' : 'none';
   iconMoon.style.display = t === 'light' ? 'block' : 'none';
 }
 
@@ -348,18 +352,18 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 /* ── BOOKING FORM ── */
 const bookingForm = document.getElementById('bookingForm');
-const formSuccess  = document.getElementById('formSuccess');
+const formSuccess = document.getElementById('formSuccess');
 
 function getFormData() {
   return {
-    name:     document.getElementById('bkName').value,
-    email:    document.getElementById('bkEmail').value,
-    phone:    document.getElementById('bkPhone').value,
-    villa:    document.getElementById('bkVilla').value,
-    checkin:  document.getElementById('bkCheckin').value,
+    name: document.getElementById('bkName').value,
+    email: document.getElementById('bkEmail').value,
+    phone: document.getElementById('bkPhone').value,
+    villa: document.getElementById('bkVilla').value,
+    checkin: document.getElementById('bkCheckin').value,
     checkout: document.getElementById('bkCheckout').value,
-    guests:   document.getElementById('bkGuests').value,
-    message:  document.getElementById('bkMessage').value
+    guests: document.getElementById('bkGuests').value,
+    message: document.getElementById('bkMessage').value
   };
 }
 
@@ -371,7 +375,7 @@ function showSuccess() {
 
 // Email via Formsubmit.co
 if (bookingForm) {
-  bookingForm.addEventListener('submit', function(e) {
+  bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const data = new FormData(bookingForm);
     fetch(bookingForm.action, {
@@ -395,6 +399,6 @@ function closeTerms() {
 }
 
 // Close modal when clicking the backdrop
-document.getElementById('termsModal').addEventListener('click', function(e) {
+document.getElementById('termsModal').addEventListener('click', function (e) {
   if (e.target === this) closeTerms();
 });
