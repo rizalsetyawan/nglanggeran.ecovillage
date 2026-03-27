@@ -70,7 +70,7 @@ const translations = {
     bv4_detail: "Riverside · 4 guests",
     bv5_detail: "Riverside · 4 guests",
     bv6_detail: "Riverside · 4 guests",
-    bv7_detail: "Riverside · 4 guests",
+    bv7_detail: "Riverside · 6 guests",
     bv8_detail: "Garden · 4 guests",
 
     booking_label: "Reservations",
@@ -194,7 +194,7 @@ const translations = {
     bv4_detail: "Tepi sungai · 4 tamu",
     bv5_detail: "Tepi sungai · 4 tamu",
     bv6_detail: "Tepi sungai · 4 tamu",
-    bv7_detail: "Tepi sungai · 4 tamu",
+    bv7_detail: "Tepi sungai · 6 tamu",
     bv8_detail: "Taman · 4 tamu",
 
     booking_label: "Reservasi",
