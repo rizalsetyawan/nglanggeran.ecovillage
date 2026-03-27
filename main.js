@@ -19,12 +19,12 @@ const translations = {
     hero_cta: "Inquire Now",
 
     concept_label: "Our Concept",
-    concept_title: "Stay by the river, wake up to nature.",
+    concept_title: "Stay by the river, wake up to nature",
     concept_body: "Nglanggeran Eco-Village sits on the edge of a river in Gunung Kidul's highlands. We built the villas to fit the land — not the other way around. The river runs right through the property, and the surrounding plantations give the whole place its character.",
     concept_body2: "It's a place for gatherings, retreats, or just getting away from the city for a while. Simple as that.",
 
     about_label: "Our Story",
-    about_title: "Started with a piece of land.",
+    about_title: "Started with a piece of land",
     about_body1: "Nglanggeran Eco-Village started when a family in Gunung Kidul decided to do something with their riverside land. Instead of selling it off, they built a handful of villas — each one placed along the river, each one different. The idea was straightforward: give people a place to stay that actually feels like being somewhere.",
     about_body2: "The property sits among plantations — cacao, clove, fruit trees — with the river cutting through the middle. We kept the trees that were already here and built around them. The villas are spaced out so you've got privacy, but you're never far from the water.",
     about_body3: "Now it's become a spot people come back to — families, groups of friends, small retreats. The space works for gatherings, celebrations, or just a few quiet days. There's nothing fancy about it, but that's kind of the point.",
@@ -35,7 +35,7 @@ const translations = {
     stat4: "City noise",
 
     am_label: "What's Here",
-    am_title: "Simple things, done right.",
+    am_title: "Simple things, done right",
     am_sub: "We don't try to be everything. Here's what we've got, and it's enough.",
     am1_title: "Riverfront Villas",
     am1_desc: "Six villas spread along the river, each with its own layout and feel. You'll hear the water from your bed. Sleeps two to six guests per villa.",
@@ -51,7 +51,7 @@ const translations = {
     am6_desc: "Walk through the village, visit the local market, or chat with the neighbors. This isn't a resort — it's a real place, and that's what makes it interesting.",
 
     villas_label: "The Collection",
-    villas_title: "Eight villas, one river.",
+    villas_title: "Eight villas, one river",
     villas_sub: "Each villa has its own character — different layout, different view — but they all share the same river and the same quiet.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -74,7 +74,7 @@ const translations = {
     bv8_detail: "Garden · 4 guests",
 
     booking_label: "Reservations",
-    booking_title: "Reserve your retreat.",
+    booking_title: "Reserve your retreat",
     booking_desc: "Select a villa and book directly through Airbnb, or send us an inquiry for personalised arrangements.",
     booking_or: "OR",
     booking_form_heading: "Send an Inquiry",
@@ -93,7 +93,7 @@ const translations = {
     quote: '"The best mornings start with the sound of the river."',
 
     exp_label: "What It's Like",
-    exp_title: "Slow days, good company.",
+    exp_title: "Slow days, good company",
     exp_body: "No schedule, no program. Just the river, the gardens, and as much time as you want. Wake up when you feel like it, eat when you're hungry, explore when you're curious.",
     feat1: "Riverside villas with direct water access",
     feat2: "Plantation walks through cacao, clove, and fruit trees",
@@ -102,7 +102,7 @@ const translations = {
     feat5: "Village walks and local market visits",
 
     videos_label: "Visual Stories",
-    videos_title: "Experience it in motion.",
+    videos_title: "Experience it in motion",
     videos_sub: "A glimpse into the rhythm of life at Nglanggeran — the river, the villas, and everything in between.",
     vid1_caption: "The River Path",
     vid2_caption: "Morning Light",
@@ -110,7 +110,7 @@ const translations = {
     vid4_caption: "Village Life",
 
     contact_label: "Get in Touch",
-    contact_title: "Let's connect.",
+    contact_title: "Let's connect",
     contact_body: "Got questions about the villas, availability, or events? Reach out — we're happy to help.",
     contact_location_label: "Location",
     contact_location_value: "Karang Sari, Nglanggeran, Kec. Patuk, Kabupaten Gunung Kidul, Yogyakarta",
@@ -143,12 +143,12 @@ const translations = {
     hero_cta: "Hubungi Kami",
 
     concept_label: "Konsep Kami",
-    concept_title: "Tinggal di tepi sungai, bangun bersama alam.",
+    concept_title: "Tinggal di tepi sungai, bangun bersama alam",
     concept_body: "Nglanggeran Eco-Village berada di tepi sungai di dataran tinggi Gunung Kidul. Vila-vila dibangun menyesuaikan lahan — bukan sebaliknya. Sungai mengalir tepat di tengah properti, dan perkebunan di sekitarnya memberi karakter tersendiri.",
     concept_body2: "Tempat untuk berkumpul, retreat, atau sekadar melepas penat dari kota. Sesederhana itu.",
 
     about_label: "Kisah Kami",
-    about_title: "Bermula dari sebidang tanah.",
+    about_title: "Bermula dari sebidang tanah",
     about_body1: "Nglanggeran Eco-Village bermula saat sebuah keluarga di Gunung Kidul memutuskan untuk mengelola lahan mereka di tepi sungai. Alih-alih menjualnya, mereka membangun beberapa vila — masing-masing menghadap sungai, masing-masing berbeda. Idenya sederhana: beri orang tempat menginap yang benar-benar terasa seperti berada di suatu tempat.",
     about_body2: "Properti ini berada di antara perkebunan — kakao, cengkeh, pohon buah — dengan sungai membelah di tengahnya. Pohon-pohon yang sudah ada tetap dipertahankan dan vila dibangun mengelilinginya. Jaraknya cukup untuk privasi, tapi selalu dekat dengan air.",
     about_body3: "Sekarang tempat ini jadi langganan orang untuk kembali — keluarga, rombongan teman, retreat kecil. Ruangnya cocok untuk acara, perayaan, atau sekadar beberapa hari yang tenang. Tidak ada yang mewah, dan justru itu daya tariknya.",
@@ -159,7 +159,7 @@ const translations = {
     stat4: "Kebisingan kota",
 
     am_label: "Apa Saja di Sini",
-    am_title: "Hal sederhana, dilakukan dengan benar.",
+    am_title: "Hal sederhana, dilakukan dengan benar",
     am_sub: "Kami tidak berusaha jadi segalanya. Inilah yang kami punya, dan ini cukup.",
     am1_title: "Vila Tepi Sungai",
     am1_desc: "Enam vila tersebar di sepanjang sungai, masing-masing dengan tata letak dan suasana sendiri. Suara air terdengar dari tempat tidur. Menampung dua hingga enam tamu per vila.",
@@ -175,7 +175,7 @@ const translations = {
     am6_desc: "Jalan-jalan di desa, kunjungi pasar lokal, atau ngobrol dengan tetangga. Ini bukan resor — ini tempat nyata, dan itu yang bikin menarik.",
 
     villas_label: "Koleksi Vila",
-    villas_title: "Delapan vila, satu sungai.",
+    villas_title: "Delapan vila, satu sungai",
     villas_sub: "Setiap vila punya karakternya sendiri — beda tata letak, beda pemandangan — tapi semuanya berbagi sungai dan ketenangan yang sama.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -198,7 +198,7 @@ const translations = {
     bv8_detail: "Taman · 4 tamu",
 
     booking_label: "Reservasi",
-    booking_title: "Pesan tempatmu.",
+    booking_title: "Pesan tempatmu",
     booking_desc: "Pilih vila dan pesan langsung melalui Airbnb, atau kirim pertanyaan untuk pengaturan khusus.",
     booking_or: "ATAU",
     booking_form_heading: "Kirim Pertanyaan",
@@ -217,7 +217,7 @@ const translations = {
     quote: '"Pagi terbaik dimulai dengan suara sungai."',
 
     exp_label: "Seperti Apa Rasanya",
-    exp_title: "Hari santai, teman baik.",
+    exp_title: "Hari santai, teman baik",
     exp_body: "Tidak ada jadwal, tidak ada program. Hanya sungai, kebun, dan waktu sebanyak yang kamu mau. Bangun sesukamu, makan saat lapar, jelajah saat penasaran.",
     feat1: "Vila tepi sungai dengan akses langsung ke air",
     feat2: "Jalan-jalan perkebunan kakao, cengkeh, dan buah",
@@ -226,7 +226,7 @@ const translations = {
     feat5: "Jalan-jalan desa dan kunjungan pasar lokal",
 
     videos_label: "Cerita Visual",
-    videos_title: "Rasakan geraknya.",
+    videos_title: "Rasakan geraknya",
     videos_sub: "Sekilas tentang ritme kehidupan di Nglanggeran — sungai, vila, dan semua yang ada di antaranya.",
     vid1_caption: "Jalan Sungai",
     vid2_caption: "Cahaya Pagi",
@@ -234,7 +234,7 @@ const translations = {
     vid4_caption: "Kehidupan Desa",
 
     contact_label: "Hubungi Kami",
-    contact_title: "Mari terhubung.",
+    contact_title: "Mari terhubung",
     contact_body: "Punya pertanyaan soal vila, ketersediaan, atau acara? Hubungi kami — kami senang membantu.",
     contact_location_label: "Lokasi",
     contact_location_value: "Karang Sari, Nglanggeran, Kec. Patuk, Kabupaten Gunung Kidul, Yogyakarta",
