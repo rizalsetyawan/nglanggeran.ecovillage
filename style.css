@@ -17,7 +17,7 @@
   --cream-light: #f8faf8;
   --charcoal: #1c1c1c;
   --warm-gray: #5a6b5a;
-  
+
   /* Glamorous green accents - Enhanced */
   --emerald-light: #50c878;
   --emerald: #2d8b5a;
@@ -25,13 +25,13 @@
   --sage: #9caf88;
   --sage-light: #b8c9a8;
   --moss: #6b8e6b;
-  
+
   /* Premium effects */
   --green-glow: rgba(45, 139, 90, 0.35);
-  --green-shimmer: linear-gradient(135deg, rgba(45,139,90,0) 0%, rgba(45,139,90,0.3) 50%, rgba(45,139,90,0) 100%);
-  --premium-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  --green-shimmer: linear-gradient(135deg, rgba(45, 139, 90, 0) 0%, rgba(45, 139, 90, 0.3) 50%, rgba(45, 139, 90, 0) 100%);
+  --premium-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   --luxury-glow: 0 0 40px rgba(45, 139, 90, 0.2);
-  
+
   --bg: var(--cream);
   --bg-alt: var(--cream-dark);
   --fg: var(--charcoal);
@@ -39,11 +39,11 @@
   --accent: var(--emerald);
   --border: rgba(45, 139, 90, 0.1);
   --nav-bg: rgba(245, 247, 245, 0.92);
-  
+
   --ff-display: 'Cormorant Garamond', Georgia, serif;
   --ff-body: 'DM Sans', system-ui, sans-serif;
   --ease: cubic-bezier(.25, .46, .45, .94);
-  
+
   /* Premium shadows */
   --shadow-sm: 0 2px 8px rgba(45, 139, 90, 0.08);
   --shadow-md: 0 4px 20px rgba(45, 139, 90, 0.12);
@@ -74,6 +74,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -82,6 +83,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   transition: background .4s var(--ease), color .4s var(--ease);
+  overflow-x: hidden;
 }
 
 img {
@@ -115,7 +117,7 @@ nav {
 }
 
 nav:hover {
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
@@ -147,6 +149,7 @@ nav:hover {
 .logo-text span {
   color: var(--accent);
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -275,12 +278,10 @@ nav:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom, 
-    rgba(0, 0, 0, 0.05) 0%, 
-    rgba(0, 0, 0, 0.28) 50%, 
-    rgba(0, 0, 0, 0.55) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.28) 50%,
+      rgba(0, 0, 0, 0.55) 100%);
 }
 
 .hero-content {
@@ -301,10 +302,10 @@ nav:hover {
   margin-bottom: 1.2rem;
   display: inline-block;
   padding: .5rem 1rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   border-radius: 2px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero-title {
@@ -313,7 +314,7 @@ nav:hover {
   font-weight: 300;
   line-height: 1.08;
   margin-bottom: 1.6rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title em {
@@ -328,7 +329,7 @@ nav:hover {
   max-width: 480px;
   line-height: 1.75;
   margin-bottom: 2.5rem;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta {
@@ -579,6 +580,7 @@ section {
   background: var(--bg-alt);
   padding: 9rem 0;
   position: relative;
+  overflow: hidden;
 }
 
 #villas::before {
@@ -607,11 +609,22 @@ section {
   padding: 0 100px;
   overflow: visible;
 }
+@media (max-width: 1100px) {
+  .villa-slider {
+    padding: 0 60px;
+  }
+}
+@media (max-width: 600px) {
+  .villa-slider {
+    padding: 0 44px;
+  }
+}
 
 /* ── AMBIENT BLURRED BACKGROUND ── */
 .villa-slider-bg {
   position: absolute;
-  inset: -60px -7%;          /* bleed into section padding to fill edge-to-edge */
+  inset: -60px -7%;
+  /* bleed into section padding to fill edge-to-edge */
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
@@ -625,7 +638,8 @@ section {
   object-fit: cover;
   object-position: center;
   filter: blur(60px) saturate(1.3) brightness(0.55);
-  transform: scale(1.12);   /* prevent blur edge artefacts */
+  transform: scale(1.12);
+  /* prevent blur edge artefacts */
   opacity: 0;
   transition:
     opacity 1.1s cubic-bezier(.42, 0, .58, 1),
@@ -650,13 +664,11 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--bg-alt) 0%,
-    rgba(0,0,0,0) 25%,
-    rgba(0,0,0,0) 75%,
-    var(--bg-alt) 100%
-  );
+  background: linear-gradient(to bottom,
+      var(--bg-alt) 0%,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0) 75%,
+      var(--bg-alt) 100%);
   z-index: 1;
 }
 
@@ -669,7 +681,7 @@ section {
 
 .villa-slider-track {
   display: flex;
-  gap: 2rem;
+  gap: 32px;
   transition: transform .85s cubic-bezier(.77, 0, .18, 1);
   will-change: transform;
 }
@@ -680,7 +692,8 @@ section {
   position: relative;
   border-radius: 3px;
   overflow: hidden;
-  aspect-ratio: 3/4;   /* tall portrait — feels premium */
+  aspect-ratio: 3/4;
+  /* tall portrait — feels premium */
   cursor: default;
   /* opacity/transform controlled by JS for stagger-in */
   opacity: 0;
@@ -727,18 +740,18 @@ section {
   letter-spacing: .18em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(0,0,0,.45);
+  background: rgba(0, 0, 0, .45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255, 255, 255, .2);
   border-radius: 2px;
   padding: .32rem .75rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .villa-badge--garden {
   background: rgba(74, 124, 74, .55);
-  border-color: rgba(255,255,255,.25);
+  border-color: rgba(255, 255, 255, .25);
 }
 
 /* Bottom gradient overlay */
@@ -746,12 +759,10 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 35%,
-    rgba(0,0,0,.15) 60%,
-    rgba(0,0,0,.72) 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 35%,
+      rgba(0, 0, 0, .15) 60%,
+      rgba(0, 0, 0, .72) 100%);
   z-index: 1;
   pointer-events: none;
   transition: opacity .5s var(--ease);
@@ -788,12 +799,12 @@ section {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .villa-guests {
   font-size: .7rem;
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, .75);
   letter-spacing: .08em;
 }
 
@@ -805,28 +816,28 @@ section {
   color: #fff;
   white-space: nowrap;
   flex-shrink: 0;
-  border: 1px solid rgba(255,255,255,.55);
+  border: 1px solid rgba(255, 255, 255, .55);
   border-radius: 2px;
   padding: .48rem .95rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background: rgba(255,255,255,.12);
+  background: rgba(255, 255, 255, .12);
   transition: background .3s, border-color .3s, transform .3s, box-shadow .3s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .villa-airbnb:hover {
-  background: rgba(255,255,255,.25);
-  border-color: rgba(255,255,255,.9);
+  background: rgba(255, 255, 255, .25);
+  border-color: rgba(255, 255, 255, .9);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 /* ── SLIDER ARROWS ── */
 .slider-prev,
 .slider-next {
   position: absolute;
-  top: calc(50% - 2rem);   /* vertically centred on the card image area */
+  top: calc(50% - 2rem);
   transform: translateY(-50%);
   z-index: 10;
   width: 44px;
@@ -841,17 +852,26 @@ section {
   justify-content: center;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
   transition:
     background .25s var(--ease),
     border-color .25s var(--ease),
     color .25s var(--ease),
     transform .25s var(--ease),
     opacity .25s;
-  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
 }
 
-.slider-prev { left: 24px; }
-.slider-next { right: 24px; }
+.slider-prev {
+  left: 24px;
+}
+
+.slider-next {
+  right: 24px;
+}
 
 .slider-prev svg,
 .slider-next svg {
@@ -866,7 +886,7 @@ section {
   border-color: var(--accent);
   color: #fff;
   transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 4px 20px rgba(0,0,0,.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
 }
 
 .slider-prev:disabled,
@@ -878,13 +898,37 @@ section {
 
 /* On smaller screens, overlap the cards */
 @media (max-width: 1100px) {
-  .slider-prev { left: 12px; }
-  .slider-next { right: 12px; }
+  .slider-prev {
+    left: 12px;
+  }
+
+  .slider-next {
+    right: 12px;
+  }
 }
 
 @media (max-width: 600px) {
-  .slider-prev { left: 16px; }
-  .slider-next { right: 16px; }
+  .slider-prev {
+    left: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .slider-next {
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+  
+  .slider-prev svg,
+  .slider-next svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .villa-card {
+    aspect-ratio: 2/3;
+  }
 }
 
 /* ── PAGINATION DOTS ── */
@@ -947,12 +991,10 @@ section {
 .quote-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.45) 50%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.45) 50%,
+      rgba(0, 0, 0, 0.55) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -968,7 +1010,7 @@ section {
   max-width: 24ch;
   line-height: 1.35;
   padding: 0 2rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ── PANORAMA ── */
@@ -1050,12 +1092,10 @@ section {
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, .05) 0%,
-    rgba(0, 0, 0, .02) 40%,
-    rgba(0, 0, 0, .35) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, .05) 0%,
+      rgba(0, 0, 0, .02) 40%,
+      rgba(0, 0, 0, .35) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1063,12 +1103,10 @@ section {
 }
 
 .video-item:hover .video-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, .1) 0%,
-    rgba(0, 0, 0, .05) 40%,
-    rgba(0, 0, 0, .45) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, .1) 0%,
+      rgba(0, 0, 0, .05) 40%,
+      rgba(0, 0, 0, .45) 100%);
 }
 
 .video-item.playing .video-overlay {
@@ -1202,14 +1240,12 @@ section {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, .25) 30%,
-    rgba(255, 255, 255, .45) 50%,
-    rgba(255, 255, 255, .25) 70%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, .25) 30%,
+      rgba(255, 255, 255, .45) 50%,
+      rgba(255, 255, 255, .25) 70%,
+      transparent 100%);
   z-index: 3;
   opacity: 0;
   transition: opacity .4s var(--ease);
@@ -1286,7 +1322,8 @@ section {
 
 .video-modal-content {
   position: relative;
-  display: flex; /* To prevent inline line-height issues */
+  display: flex;
+  /* To prevent inline line-height issues */
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -1348,10 +1385,12 @@ section {
   align-items: center;
   gap: 0.8rem;
   padding: 2rem 1rem 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
 }
 
-.cv-play svg, .cv-zoomout svg, .cv-mute svg {
+.cv-play svg,
+.cv-zoomout svg,
+.cv-mute svg {
   width: 20px;
   height: 20px;
 }
@@ -1369,13 +1408,14 @@ section {
   flex: 1;
   -webkit-appearance: none;
   appearance: none;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   height: 3px;
   border-radius: 1.5px;
   cursor: pointer;
   position: relative;
   pointer-events: auto;
 }
+
 .cv-progress::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 10px;
@@ -1385,6 +1425,7 @@ section {
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .cv-progress::-webkit-slider-thumb:hover {
   transform: scale(1.3);
 }
@@ -1410,6 +1451,7 @@ section {
   visibility: hidden;
   transition: opacity 0.25s, visibility 0.25s;
 }
+
 .cv-volume-group:hover .cv-volume-dropdown,
 .cv-volume-slider:focus {
   opacity: 1;
@@ -1421,13 +1463,14 @@ section {
   appearance: none;
   width: 70px;
   height: 3px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 1.5px;
   cursor: pointer;
   transform: rotate(-90deg);
   margin: 0;
   pointer-events: auto;
 }
+
 .cv-volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 10px;
@@ -1592,7 +1635,7 @@ section {
   overflow: hidden;
 }
 
-#contact > *:not(.contact-bg) {
+#contact>*:not(.contact-bg) {
   position: relative;
   z-index: 2;
 }
@@ -1632,13 +1675,11 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--bg-alt) 0%,
-    transparent 25%,
-    transparent 75%,
-    var(--bg-alt) 100%
-  );
+  background: linear-gradient(to bottom,
+      var(--bg-alt) 0%,
+      transparent 25%,
+      transparent 75%,
+      var(--bg-alt) 100%);
   z-index: 1;
 }
 
@@ -2314,6 +2355,11 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .videos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
   .villa-card {
     aspect-ratio: 4/3;
   }
@@ -2359,6 +2405,10 @@ footer {
   }
 
   .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .videos-grid {
     grid-template-columns: 1fr;
   }
 }

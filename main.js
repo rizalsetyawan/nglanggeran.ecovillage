@@ -447,22 +447,22 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
 
 /* ── VILLA SLIDER ── */
 (function () {
-  const track    = document.getElementById('villaTrack');
+  const track = document.getElementById('villaTrack');
   if (!track) return;
 
   const viewport = track.closest('.villa-slider-viewport');
-  const cards    = Array.from(track.querySelectorAll('.villa-card'));
-  const prevBtn  = document.getElementById('villaPrev');
-  const nextBtn  = document.getElementById('villaNext');
+  const cards = Array.from(track.querySelectorAll('.villa-card'));
+  const prevBtn = document.getElementById('villaPrev');
+  const nextBtn = document.getElementById('villaNext');
   const dotsWrap = document.getElementById('villaDots');
-  const bgWrap   = document.getElementById('villaSliderBg');   // blur bg container
-  const bgImg    = document.getElementById('villaSliderBgImg'); // initial bg <img>
+  const bgWrap = document.getElementById('villaSliderBg');   // blur bg container
+  const bgImg = document.getElementById('villaSliderBgImg'); // initial bg <img>
 
-  const GAP_PX    = 32;   // must match CSS gap (2rem @ 16px = 32px)
-  let PER_PAGE    = 3;
-  let totalPages  = 0;
+  const GAP_PX = 32;   // must match CSS gap (2rem @ 16px = 32px)
+  let PER_PAGE = 3;
+  let totalPages = 0;
   let currentPage = 0;
-  let animating   = false;
+  let animating = false;
 
   /* ─────────────────────────────────────────────
      Ambient blur background crossfade
@@ -474,7 +474,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
   ───────────────────────────────────────────── */
   let activeBgImg = bgImg; // the currently visible bg image
 
-  function crossfadeBg (newSrc) {
+  function crossfadeBg(newSrc) {
     if (!bgWrap || !newSrc) return;
     if (activeBgImg && newSrc === activeBgImg.getAttribute('src')) return;
 
@@ -494,14 +494,14 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
       transition:opacity 1.1s cubic-bezier(.42,0,.58,1), transform 1.4s cubic-bezier(.42,0,.58,1);
       will-change:opacity,transform;
     `;
-    
+
     // Append new image to container
     bgWrap.appendChild(next);
 
     // Trigger: fade new in
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        next.style.opacity   = '1';
+        next.style.opacity = '1';
         next.style.transform = 'scale(1)';
       });
     });
@@ -509,11 +509,11 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
     // Store old image reference before updating
     const old = activeBgImg;
     activeBgImg = next;
-    
+
     // Clean up old image after transition completes
     if (old && old.parentNode) {
-      setTimeout(() => { 
-        if (old.parentNode) old.parentNode.removeChild(old); 
+      setTimeout(() => {
+        if (old.parentNode) old.parentNode.removeChild(old);
       }, 1400);
     }
   }
@@ -521,26 +521,26 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
   /* ─────────────────────────────────────────────
      Measure card widths from current viewport
   ───────────────────────────────────────────── */
-  function getPerPage () {
+  function getPerPage() {
     return viewport.offsetWidth < 600 ? 1 : (viewport.offsetWidth < 920 ? 2 : 3);
   }
 
-  function measure () {
+  function measure() {
     PER_PAGE = getPerPage();
     totalPages = Math.ceil(cards.length / PER_PAGE);
 
-    const vw     = viewport.offsetWidth;
-    const cardW  = (vw - GAP_PX * (PER_PAGE - 1)) / PER_PAGE;
+    const vw = viewport.offsetWidth;
+    const cardW = (vw - GAP_PX * (PER_PAGE - 1)) / PER_PAGE;
 
     cards.forEach(c => {
-      c.style.width      = cardW + 'px';
+      c.style.width = cardW + 'px';
       c.style.flexShrink = '0';
     });
 
     // Snap to current page without animation
     const pageW = vw + GAP_PX;
     track.style.transition = 'none';
-    track.style.transform  = `translateX(-${currentPage * pageW}px)`;
+    track.style.transform = `translateX(-${currentPage * pageW}px)`;
     requestAnimationFrame(() => {
       track.style.transition = 'transform .85s cubic-bezier(.77, 0, .18, 1)';
     });
@@ -549,7 +549,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
   /* ─────────────────────────────────────────────
      Build / rebuild pagination dots
   ───────────────────────────────────────────── */
-  function buildDots () {
+  function buildDots() {
     dotsWrap.innerHTML = '';
     for (let i = 0; i < totalPages; i++) {
       const dot = document.createElement('button');
@@ -563,9 +563,9 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
   /* ─────────────────────────────────────────────
      Staggered card entrance
   ───────────────────────────────────────────── */
-  function animateIn (page) {
+  function animateIn(page) {
     const start = page * PER_PAGE;
-    const end   = Math.min(start + PER_PAGE, cards.length);
+    const end = Math.min(start + PER_PAGE, cards.length);
 
     // Hide all cards on this page first (instant reset)
     for (let i = start; i < end; i++) {
@@ -577,7 +577,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
     requestAnimationFrame(() => {
       for (let i = start; i < end; i++) {
         const delay = 60 + (i - start) * 110;   // 60ms, 170ms, 280ms
-        ;(function (card, ms) {
+        ; (function (card, ms) {
           setTimeout(() => {
             card.style.transition = 'opacity .55s var(--ease), transform .55s var(--ease)';
             card.classList.add('card-visible');
@@ -590,7 +590,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
   /* ─────────────────────────────────────────────
      Navigate to page
   ───────────────────────────────────────────── */
-  function goTo (page) {
+  function goTo(page) {
     if (animating) return;
     if (page < 0 || page >= totalPages) return;
     if (page === currentPage) return;
@@ -598,7 +598,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
     animating = true;
     currentPage = page;
 
-    const vw    = viewport.offsetWidth;
+    const vw = viewport.offsetWidth;
     const pageW = vw + GAP_PX;
     track.style.transform = `translateX(-${currentPage * pageW}px)`;
 
@@ -607,7 +607,7 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
 
     // Crossfade ambient background to the first card of this page
     const firstCard = cards[currentPage * PER_PAGE];
-    const imgSrc    = firstCard ? firstCard.dataset.img : null;
+    const imgSrc = firstCard ? firstCard.dataset.img : null;
     crossfadeBg(imgSrc);
 
     // Update arrow states
@@ -717,7 +717,7 @@ if (modalVideo) {
       modalVideo.paused ? modalVideo.play() : modalVideo.pause();
     });
   }
-  
+
   modalVideo.addEventListener('click', (e) => {
     e.stopPropagation();
     modalVideo.paused ? modalVideo.play() : modalVideo.pause();
@@ -729,7 +729,7 @@ if (modalVideo) {
   modalVideo.addEventListener('loadedmetadata', () => {
     if (cvDuration) cvDuration.textContent = formatTime(modalVideo.duration);
   });
-  
+
   modalVideo.addEventListener('timeupdate', () => {
     if (cvCurrentTime) cvCurrentTime.textContent = formatTime(modalVideo.currentTime);
     if (cvProgress && modalVideo.duration) {
@@ -775,7 +775,7 @@ if (modalVideo) {
 
 function openVideoModal(src) {
   if (!videoModal || !modalVideo) return;
-  
+
   // Pause any currently playing inline videos
   document.querySelectorAll('.video-item video').forEach(v => {
     if (!v.paused) {
@@ -783,7 +783,7 @@ function openVideoModal(src) {
       v.muted = true;
       const item = v.closest('.video-item');
       if (item) item.classList.remove('playing');
-      
+
       const playIcon = item?.querySelector('.icon-play');
       const pauseIcon = item?.querySelector('.icon-pause');
       if (playIcon) playIcon.style.display = 'block';
@@ -792,14 +792,14 @@ function openVideoModal(src) {
   });
 
   modalVideo.src = src;
-  
+
   modalVideo.volume = 1;
   modalVideo.muted = false;
   if (cvVolume) cvVolume.value = 1;
   updateVolumeIcon();
   if (cvProgress) cvProgress.value = 0;
   if (cvCurrentTime) cvCurrentTime.textContent = '0:00';
-  
+
   videoModal.classList.add('open');
   document.body.style.overflow = 'hidden';
   modalVideo.play().catch(() => {
