@@ -10,6 +10,7 @@ const translations = {
     nav_villas: "Villas",
     nav_amenities: "Amenities",
     nav_experience: "Experience",
+    nav_videos: "Videos",
     nav_booking: "Reservation",
     nav_contact: "Contact",
 
@@ -50,7 +51,7 @@ const translations = {
     am6_desc: "Walk through the village, visit the local market, or chat with the neighbors. This isn't a resort — it's a real place, and that's what makes it interesting.",
 
     villas_label: "The Collection",
-    villas_title: "Six villas, one river.",
+    villas_title: "Twelve villas, one river.",
     villas_sub: "Each villa has its own character — different layout, different view — but they all share the same river and the same quiet.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -58,6 +59,12 @@ const translations = {
     villa4: "Villa Sonokeling",
     villa5: "Villa Damar",
     villa6: "Villa Ulin",
+    villa7: "Villa Jati",
+    villa8: "Villa Meranti",
+    villa9: "Villa Cendana",
+    villa10: "Villa Ketapang",
+    villa11: "Villa Flamboyan",
+    villa12: "Villa Akasia",
     villa_book: "Book on Airbnb",
 
     bv1_detail: "Riverside · 4 guests",
@@ -66,6 +73,12 @@ const translations = {
     bv4_detail: "Riverside · 4 guests",
     bv5_detail: "Riverside · 4 guests",
     bv6_detail: "Riverside · 4 guests",
+    bv7_detail: "Riverside · 4 guests",
+    bv8_detail: "Garden · 4 guests",
+    bv9_detail: "Riverside · 6 guests",
+    bv10_detail: "Garden · 4 guests",
+    bv11_detail: "Riverside · 4 guests",
+    bv12_detail: "Riverside · 6 guests",
 
     booking_label: "Reservations",
     booking_title: "Reserve your retreat.",
@@ -95,6 +108,14 @@ const translations = {
     feat4: "Local Javanese meals on the terrace",
     feat5: "Village walks and local market visits",
 
+    videos_label: "Visual Stories",
+    videos_title: "Experience it in motion.",
+    videos_sub: "A glimpse into the rhythm of life at Nglanggeran — the river, the villas, and everything in between.",
+    vid1_caption: "The River Path",
+    vid2_caption: "Morning Light",
+    vid3_caption: "Villa Gardens",
+    vid4_caption: "Village Life",
+
     contact_label: "Get in Touch",
     contact_title: "Let's connect.",
     contact_body: "Got questions about the villas, availability, or events? Reach out — we're happy to help.",
@@ -120,6 +141,7 @@ const translations = {
     nav_villas: "Vila",
     nav_amenities: "Fasilitas",
     nav_experience: "Pengalaman",
+    nav_videos: "Video",
     nav_booking: "Reservasi",
     nav_contact: "Kontak",
 
@@ -160,7 +182,7 @@ const translations = {
     am6_desc: "Jalan-jalan di desa, kunjungi pasar lokal, atau ngobrol dengan tetangga. Ini bukan resor — ini tempat nyata, dan itu yang bikin menarik.",
 
     villas_label: "Koleksi Vila",
-    villas_title: "Enam vila, satu sungai.",
+    villas_title: "Dua belas vila, satu sungai.",
     villas_sub: "Setiap vila punya karakternya sendiri — beda tata letak, beda pemandangan — tapi semuanya berbagi sungai dan ketenangan yang sama.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -168,6 +190,12 @@ const translations = {
     villa4: "Villa Sonokeling",
     villa5: "Villa Damar",
     villa6: "Villa Ulin",
+    villa7: "Villa Jati",
+    villa8: "Villa Meranti",
+    villa9: "Villa Cendana",
+    villa10: "Villa Ketapang",
+    villa11: "Villa Flamboyan",
+    villa12: "Villa Akasia",
     villa_book: "Pesan di Airbnb",
 
     bv1_detail: "Tepi sungai · 4 tamu",
@@ -176,6 +204,12 @@ const translations = {
     bv4_detail: "Tepi sungai · 4 tamu",
     bv5_detail: "Tepi sungai · 4 tamu",
     bv6_detail: "Tepi sungai · 4 tamu",
+    bv7_detail: "Tepi sungai · 4 tamu",
+    bv8_detail: "Taman · 4 tamu",
+    bv9_detail: "Tepi sungai · 6 tamu",
+    bv10_detail: "Taman · 4 tamu",
+    bv11_detail: "Tepi sungai · 4 tamu",
+    bv12_detail: "Tepi sungai · 6 tamu",
 
     booking_label: "Reservasi",
     booking_title: "Pesan tempatmu.",
@@ -204,6 +238,14 @@ const translations = {
     feat3: "Ruang serbaguna untuk acara dan kumpul-kumpul",
     feat4: "Masakan Jawa lokal di teras",
     feat5: "Jalan-jalan desa dan kunjungan pasar lokal",
+
+    videos_label: "Cerita Visual",
+    videos_title: "Rasakan geraknya.",
+    videos_sub: "Sekilas tentang ritme kehidupan di Nglanggeran — sungai, vila, dan semua yang ada di antaranya.",
+    vid1_caption: "Jalan Sungai",
+    vid2_caption: "Cahaya Pagi",
+    vid3_caption: "Taman Vila",
+    vid4_caption: "Kehidupan Desa",
 
     contact_label: "Hubungi Kami",
     contact_title: "Mari terhubung.",
@@ -401,4 +443,416 @@ function closeTerms() {
 // Close modal when clicking the backdrop
 document.getElementById('termsModal').addEventListener('click', function (e) {
   if (e.target === this) closeTerms();
+});
+
+/* ── VILLA SLIDER ── */
+(function () {
+  const track    = document.getElementById('villaTrack');
+  if (!track) return;
+
+  const viewport = track.closest('.villa-slider-viewport');
+  const cards    = Array.from(track.querySelectorAll('.villa-card'));
+  const prevBtn  = document.getElementById('villaPrev');
+  const nextBtn  = document.getElementById('villaNext');
+  const dotsWrap = document.getElementById('villaDots');
+  const bgWrap   = document.getElementById('villaSliderBg');   // blur bg container
+  const bgImg    = document.getElementById('villaSliderBgImg'); // initial bg <img>
+
+  const GAP_PX    = 32;   // must match CSS gap (2rem @ 16px = 32px)
+  let PER_PAGE    = 3;
+  let totalPages  = 0;
+  let currentPage = 0;
+  let animating   = false;
+
+  /* ─────────────────────────────────────────────
+     Ambient blur background crossfade
+     ─────────────────────────────────────────────
+     Strategy: keep TWO <img> tags in bgWrap.
+     The "current" one is visible; when page
+     changes we create/update the "next" one,
+     fade it in, then remove the old one.
+  ───────────────────────────────────────────── */
+  let activeBgImg = bgImg; // the currently visible bg image
+
+  function crossfadeBg (newSrc) {
+    if (!bgWrap || !newSrc) return;
+    if (activeBgImg && newSrc === activeBgImg.getAttribute('src')) return;
+
+    // Ensure the background is visible
+    bgWrap.classList.add('bg-ready');
+
+    // Create a new image node
+    const next = document.createElement('img');
+    next.src = newSrc;
+    next.setAttribute('aria-hidden', 'true');
+    next.style.cssText = `
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center;
+      filter:blur(60px) saturate(1.3) brightness(0.55);
+      transform:scale(1.12);
+      opacity:0;
+      transition:opacity 1.1s cubic-bezier(.42,0,.58,1), transform 1.4s cubic-bezier(.42,0,.58,1);
+      will-change:opacity,transform;
+    `;
+    
+    // Append new image to container
+    bgWrap.appendChild(next);
+
+    // Trigger: fade new in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        next.style.opacity   = '1';
+        next.style.transform = 'scale(1)';
+      });
+    });
+
+    // Store old image reference before updating
+    const old = activeBgImg;
+    activeBgImg = next;
+    
+    // Clean up old image after transition completes
+    if (old && old.parentNode) {
+      setTimeout(() => { 
+        if (old.parentNode) old.parentNode.removeChild(old); 
+      }, 1400);
+    }
+  }
+
+  /* ─────────────────────────────────────────────
+     Measure card widths from current viewport
+  ───────────────────────────────────────────── */
+  function getPerPage () {
+    return viewport.offsetWidth < 600 ? 1 : (viewport.offsetWidth < 920 ? 2 : 3);
+  }
+
+  function measure () {
+    PER_PAGE = getPerPage();
+    totalPages = Math.ceil(cards.length / PER_PAGE);
+
+    const vw     = viewport.offsetWidth;
+    const cardW  = (vw - GAP_PX * (PER_PAGE - 1)) / PER_PAGE;
+
+    cards.forEach(c => {
+      c.style.width      = cardW + 'px';
+      c.style.flexShrink = '0';
+    });
+
+    // Snap to current page without animation
+    const pageW = vw + GAP_PX;
+    track.style.transition = 'none';
+    track.style.transform  = `translateX(-${currentPage * pageW}px)`;
+    requestAnimationFrame(() => {
+      track.style.transition = 'transform .85s cubic-bezier(.77, 0, .18, 1)';
+    });
+  }
+
+  /* ─────────────────────────────────────────────
+     Build / rebuild pagination dots
+  ───────────────────────────────────────────── */
+  function buildDots () {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Page ${i + 1} of ${totalPages}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  /* ─────────────────────────────────────────────
+     Staggered card entrance
+  ───────────────────────────────────────────── */
+  function animateIn (page) {
+    const start = page * PER_PAGE;
+    const end   = Math.min(start + PER_PAGE, cards.length);
+
+    // Hide all cards on this page first (instant reset)
+    for (let i = start; i < end; i++) {
+      cards[i].style.transition = 'none';
+      cards[i].classList.remove('card-visible');
+    }
+
+    // Re-enable transitions and stagger each card
+    requestAnimationFrame(() => {
+      for (let i = start; i < end; i++) {
+        const delay = 60 + (i - start) * 110;   // 60ms, 170ms, 280ms
+        ;(function (card, ms) {
+          setTimeout(() => {
+            card.style.transition = 'opacity .55s var(--ease), transform .55s var(--ease)';
+            card.classList.add('card-visible');
+          }, ms);
+        })(cards[i], delay);
+      }
+    });
+  }
+
+  /* ─────────────────────────────────────────────
+     Navigate to page
+  ───────────────────────────────────────────── */
+  function goTo (page) {
+    if (animating) return;
+    if (page < 0 || page >= totalPages) return;
+    if (page === currentPage) return;
+
+    animating = true;
+    currentPage = page;
+
+    const vw    = viewport.offsetWidth;
+    const pageW = vw + GAP_PX;
+    track.style.transform = `translateX(-${currentPage * pageW}px)`;
+
+    // Stagger cards on the new page
+    animateIn(currentPage);
+
+    // Crossfade ambient background to the first card of this page
+    const firstCard = cards[currentPage * PER_PAGE];
+    const imgSrc    = firstCard ? firstCard.dataset.img : null;
+    crossfadeBg(imgSrc);
+
+    // Update arrow states
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= totalPages - 1;
+
+    // Update dots
+    dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === currentPage)
+    );
+
+    setTimeout(() => { animating = false; }, 900);
+  }
+
+  /* ─────────────────────────────────────────────
+     Event listeners
+  ───────────────────────────────────────────── */
+  prevBtn.addEventListener('click', () => goTo(currentPage - 1));
+  nextBtn.addEventListener('click', () => goTo(currentPage + 1));
+
+  // Resize: re-measure, rebuild dots, re-snap
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const prevPerPage = PER_PAGE;
+      measure();
+      if (prevPerPage !== PER_PAGE) {
+        // Page size changed — clamp and rebuild
+        currentPage = Math.min(currentPage, Math.ceil(cards.length / PER_PAGE) - 1);
+        buildDots();
+        animateIn(currentPage);
+      }
+    }, 150);
+  });
+
+  /* ─────────────────────────────────────────────
+     Init
+  ───────────────────────────────────────────── */
+  measure();
+  buildDots();
+  animateIn(0);
+  prevBtn.disabled = true;
+  nextBtn.disabled = totalPages <= 1;
+
+  // Activate initial ambient background
+  if (bgWrap && cards.length > 0) {
+    const firstCardImg = cards[0].dataset.img;
+    if (firstCardImg) {
+      const initImg = bgWrap.querySelector('img');
+      if (initImg) initImg.src = firstCardImg;
+    }
+    bgWrap.classList.add('bg-ready');
+  }
+})();
+
+
+
+/* ── VIDEO MODAL ── */
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+
+const cvPlayBtn = document.getElementById('cvPlayBtn');
+const cvCurrentTime = document.getElementById('cvCurrentTime');
+const cvDuration = document.getElementById('cvDuration');
+const cvProgress = document.getElementById('cvProgress');
+const cvMuteBtn = document.getElementById('cvMuteBtn');
+const cvVolume = document.getElementById('cvVolume');
+const cvZoomOutBtn = document.getElementById('cvZoomOutBtn');
+
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60) || 0;
+  const s = Math.floor(seconds % 60) || 0;
+  return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
+
+function updatePlayIcon() {
+  if (!cvPlayBtn) return;
+  const playIcon = cvPlayBtn.querySelector('.icon-play');
+  const pauseIcon = cvPlayBtn.querySelector('.icon-pause');
+  if (modalVideo.paused) {
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  } else {
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  }
+}
+
+function updateVolumeIcon() {
+  if (!cvMuteBtn) return;
+  const volOn = cvMuteBtn.querySelector('.icon-vol-on');
+  const volOff = cvMuteBtn.querySelector('.icon-vol-off');
+  if (modalVideo.muted || modalVideo.volume === 0) {
+    volOn.style.display = 'none';
+    volOff.style.display = 'block';
+  } else {
+    volOn.style.display = 'block';
+    volOff.style.display = 'none';
+  }
+}
+
+if (modalVideo) {
+  if (cvPlayBtn) {
+    cvPlayBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modalVideo.paused ? modalVideo.play() : modalVideo.pause();
+    });
+  }
+  
+  modalVideo.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modalVideo.paused ? modalVideo.play() : modalVideo.pause();
+  });
+
+  modalVideo.addEventListener('play', updatePlayIcon);
+  modalVideo.addEventListener('pause', updatePlayIcon);
+
+  modalVideo.addEventListener('loadedmetadata', () => {
+    if (cvDuration) cvDuration.textContent = formatTime(modalVideo.duration);
+  });
+  
+  modalVideo.addEventListener('timeupdate', () => {
+    if (cvCurrentTime) cvCurrentTime.textContent = formatTime(modalVideo.currentTime);
+    if (cvProgress && modalVideo.duration) {
+      cvProgress.value = (modalVideo.currentTime / modalVideo.duration) * 100;
+    }
+  });
+
+  if (cvProgress) {
+    cvProgress.addEventListener('input', (e) => {
+      const time = (e.target.value / 100) * modalVideo.duration;
+      modalVideo.currentTime = time;
+    });
+  }
+
+  if (cvMuteBtn) {
+    cvMuteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modalVideo.muted = !modalVideo.muted;
+      if (!modalVideo.muted && modalVideo.volume === 0) modalVideo.volume = 0.5;
+      if (cvVolume) cvVolume.value = modalVideo.muted ? 0 : modalVideo.volume;
+      updateVolumeIcon();
+    });
+  }
+
+  if (cvVolume) {
+    cvVolume.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      modalVideo.volume = val;
+      modalVideo.muted = val === 0;
+      updateVolumeIcon();
+    });
+  }
+
+  modalVideo.addEventListener('volumechange', updateVolumeIcon);
+
+  if (cvZoomOutBtn) {
+    cvZoomOutBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeVideoModal();
+    });
+  }
+}
+
+function openVideoModal(src) {
+  if (!videoModal || !modalVideo) return;
+  
+  // Pause any currently playing inline videos
+  document.querySelectorAll('.video-item video').forEach(v => {
+    if (!v.paused) {
+      v.pause();
+      v.muted = true;
+      const item = v.closest('.video-item');
+      if (item) item.classList.remove('playing');
+      
+      const playIcon = item?.querySelector('.icon-play');
+      const pauseIcon = item?.querySelector('.icon-pause');
+      if (playIcon) playIcon.style.display = 'block';
+      if (pauseIcon) pauseIcon.style.display = 'none';
+    }
+  });
+
+  modalVideo.src = src;
+  
+  modalVideo.volume = 1;
+  modalVideo.muted = false;
+  if (cvVolume) cvVolume.value = 1;
+  updateVolumeIcon();
+  if (cvProgress) cvProgress.value = 0;
+  if (cvCurrentTime) cvCurrentTime.textContent = '0:00';
+  
+  videoModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modalVideo.play().catch(() => {
+    modalVideo.muted = true;
+    modalVideo.play();
+    updateVolumeIcon();
+  });
+}
+
+function closeVideoModal() {
+  if (!videoModal || !modalVideo) return;
+  videoModal.classList.remove('open');
+  document.body.style.overflow = '';
+  modalVideo.pause();
+  setTimeout(() => { modalVideo.src = ''; }, 400);
+}
+
+
+
+if (videoModal) {
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal || e.target.id === 'videoModalContent') closeVideoModal();
+  });
+}
+
+document.querySelectorAll('.video-item').forEach(item => {
+  const video = item.querySelector('video');
+  const src = video.getAttribute('src');
+  const playBtn = item.querySelector('.video-play-btn');
+  const zoomBtn = item.querySelector('.video-zoom-btn');
+
+  function togglePlay(e) {
+    if (e) e.stopPropagation();
+    if (video.paused) {
+      document.querySelectorAll('.video-item video').forEach(v => {
+        if (v !== video) { v.pause(); v.muted = true; v.closest('.video-item').classList.remove('playing'); }
+      });
+      video.muted = false;
+      video.play();
+      item.classList.add('playing');
+    } else {
+      video.pause();
+      video.muted = true;
+      item.classList.remove('playing');
+    }
+  }
+
+  function handleZoomClick(e) {
+    if (e) e.stopPropagation();
+    openVideoModal(src);
+  }
+
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (zoomBtn) zoomBtn.addEventListener('click', handleZoomClick);
+  item.addEventListener('click', togglePlay);
 });

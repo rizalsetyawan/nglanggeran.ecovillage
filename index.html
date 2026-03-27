@@ -97,7 +97,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.15.jpeg"
+    <img src="images/Pure Exterior/1.jpeg"
       alt="Welcome to Nglanggeran Eco-Village dining terrace" loading="eager" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -112,7 +112,7 @@
   <!-- CONCEPT -->
   <section id="concept">
     <div class="concept-img reveal">
-      <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.13.jpeg"
+      <img src="images/Nature Scenery/37.jpeg"
         alt="Traditional wooden villa at sunset surrounded by tropical forest" loading="lazy" />
     </div>
     <div class="reveal reveal-delay-1">
@@ -148,11 +148,11 @@
           There's nothing fancy about it, but that's kind of the point.</p>
       </div>
       <div class="about-photo-strip reveal">
-        <div class="strip-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.17.jpeg"
+        <div class="strip-img"><img src="images/Nature Scenery/26.jpeg"
             alt="Garden terrace overlooking the forest canopy" loading="lazy" /></div>
-        <div class="strip-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.15.jpeg"
+        <div class="strip-img"><img src="images/Nature Scenery/6.jpeg"
             alt="Welcome to Nglanggeran dining terrace with river view" loading="lazy" /></div>
-        <div class="strip-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.23.jpeg"
+        <div class="strip-img"><img src="images/People/19.jpeg"
             alt="Eco-Village property path with villas" loading="lazy" /></div>
       </div>
       <div class="stats-row reveal">
@@ -173,54 +173,237 @@
     <div class="villas-head reveal">
       <div>
         <p class="section-label" data-i18n="villas_label">The Collection</p>
-        <h2 class="section-title" data-i18n="villas_title">Six villas, <em>one river.</em></h2>
+        <h2 class="section-title" data-i18n="villas_title">Twelve villas, <em>one river.</em></h2>
       </div>
       <p class="section-body" style="max-width:36ch" data-i18n="villas_sub">Each villa has its own character — different
         layout, different view — but they all share the same river and the same quiet.</p>
     </div>
-    <div class="grid-villas">
-      <div class="villa-card reveal">
-        <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.13.jpeg" alt="Villa Trembesi" loading="lazy" />
-        <span class="villa-label" data-i18n="villa1">Villa Trembesi</span>
-        <a href="https://www.airbnb.co.uk/rooms/1591818133983472938" target="_blank" rel="noopener" class="villa-airbnb"
-          data-i18n="villa_book">Book on Airbnb</a>
+
+    <!-- Slider wrapper -->
+    <div class="villa-slider">
+
+      <!-- Ambient blurred background — src swapped by JS on page change -->
+      <div class="villa-slider-bg" id="villaSliderBg">
+        <img src="images/Nature Scenery/13.jpeg" alt="" aria-hidden="true" id="villaSliderBgImg" />
       </div>
-      <div class="villa-card reveal reveal-delay-1">
-        <img src="images/am-nature.jpg" alt="Villa Mahoni" loading="lazy" />
-        <span class="villa-label" data-i18n="villa2">Villa Mahoni</span>
-        <a href="https://www.airbnb.com/rooms/1608646279847167408" target="_blank" rel="noopener" class="villa-airbnb"
-          data-i18n="villa_book">Book on Airbnb</a>
-      </div>
-      <div class="villa-card reveal reveal-delay-2">
-        <img src="images/sengon.jpg" alt="Villa Sengon" loading="lazy" />
-        <span class="villa-label" data-i18n="villa3">Villa Sengon</span>
-        <a href="https://www.airbnb.com/rooms/1377210640932942855" target="_blank" rel="noopener" class="villa-airbnb"
-          data-i18n="villa_book">Book on Airbnb</a>
-      </div>
-      <div class="villa-card reveal">
-        <img src="images/quote-bg.jpg" alt="Villa Sonokeling" loading="lazy" />
-        <span class="villa-label" data-i18n="villa4">Villa Sonokeling</span>
-        <a href="http://airbnb.com/h/villasonokelingnglanggeraneco-village" target="_blank" rel="noopener"
-          class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
-      </div>
-      <div class="villa-card reveal reveal-delay-1">
-        <img src="images/damar.jpg" alt="Villa Damar" loading="lazy" />
-        <span class="villa-label" data-i18n="villa5">Villa Damar</span>
-        <a href="http://airbnb.com/h/villadamarnglanggeraneco-village" target="_blank" rel="noopener"
-          class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
-      </div>
-      <div class="villa-card reveal reveal-delay-2">
-        <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.23.jpeg" alt="Villa Ulin" loading="lazy" />
-        <span class="villa-label" data-i18n="villa6">Villa Ulin</span>
-        <a href="http://airbnb.com/h/villaulinnglanggeraneco-village" target="_blank" rel="noopener"
-          class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
-      </div>
-    </div>
+
+      <!-- Navigation arrows -->
+      <button class="slider-prev" id="villaPrev" aria-label="Previous villas" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-next" id="villaNext" aria-label="Next villas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+
+      <!-- Scroll viewport -->
+      <div class="villa-slider-viewport">
+        <div class="villa-slider-track" id="villaTrack">
+
+          <!-- Card 1 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/13.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/59.jpeg" alt="Villa Trembesi" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa1">Villa Trembesi</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="https://www.airbnb.co.uk/rooms/1591818133983472938" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/14.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/32.jpeg" alt="Villa Mahoni" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa2">Villa Mahoni</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="https://www.airbnb.com/rooms/1608646279847167408" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/15.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/56.jpeg" alt="Villa Sengon" loading="lazy" />
+              <span class="villa-badge villa-badge--garden">Garden</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa3">Villa Sengon</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="https://www.airbnb.com/rooms/1377210640932942855" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/26.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/41.jpeg" alt="Villa Sonokeling" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa4">Villa Sonokeling</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="http://airbnb.com/h/villasonokelingnglanggeraneco-village" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/27.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/57.jpeg" alt="Villa Damar" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa5">Villa Damar</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="http://airbnb.com/h/villadamarnglanggeraneco-village" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/15.jpeg">
+            <div class="villa-card-img">
+              <img src="images/People/21.jpeg" alt="Villa Ulin" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa6">Villa Ulin</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="http://airbnb.com/h/villaulinnglanggeraneco-village" target="_blank" rel="noopener" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/26.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/41.jpeg" alt="Villa Jati" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa7">Villa Jati</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/27.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/48.jpeg" alt="Villa Meranti" loading="lazy" />
+              <span class="villa-badge villa-badge--garden">Garden</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa8">Villa Meranti</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/36.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/29.jpeg" alt="Villa Cendana" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa9">Villa Cendana</span>
+                <span class="villa-guests">· 6 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="villa-card"
+               data-img="images/Nature Scenery/37.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/43.jpeg" alt="Villa Ketapang" loading="lazy" />
+              <span class="villa-badge villa-badge--garden">Garden</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa10">Villa Ketapang</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 11 -->
+          <div class="villa-card"
+               data-img="images/Pure Exterior/60.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/60.jpeg" alt="Villa Flamboyan" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa11">Villa Flamboyan</span>
+                <span class="villa-guests">· 4 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+          <!-- Card 12 -->
+          <div class="villa-card"
+               data-img="images/Pure Exterior/61.jpeg">
+            <div class="villa-card-img">
+              <img src="images/Pure Exterior/61.jpeg" alt="Villa Akasia" loading="lazy" />
+              <span class="villa-badge">Riverside</span>
+            </div>
+            <div class="villa-info">
+              <div class="villa-meta">
+                <span class="villa-label" data-i18n="villa12">Villa Akasia</span>
+                <span class="villa-guests">· 6 guests</span>
+              </div>
+              <a href="#booking" class="villa-airbnb" data-i18n="villa_book">Book on Airbnb</a>
+            </div>
+          </div>
+
+        </div><!-- end track -->
+      </div><!-- end viewport -->
+
+      <!-- Dot pagination -->
+      <div class="slider-dots" id="villaDots"></div>
+
+    </div><!-- end .villa-slider -->
+
   </section>
 
   <!-- QUOTE -->
   <div class="quote-section">
-    <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.23.jpeg" alt="Eco-Village grounds with forest canopy"
+    <img src="images/Nature Scenery/39.jpeg" alt="Eco-Village grounds with forest canopy"
       loading="lazy" />
     <div class="quote-overlay">
       <p class="quote-text" data-i18n="quote">"The best mornings start with the sound of the river."</p>
@@ -229,15 +412,76 @@
 
   <!-- PANORAMA -->
   <div class="panorama-strip">
-    <div class="pan-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.22.jpeg"
+    <div class="pan-img"><img src="images/Nature Scenery/27.jpeg"
         alt="Vine-covered garden pathway" loading="lazy" /></div>
-    <div class="pan-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.16.jpeg"
+    <div class="pan-img"><img src="images/Nature Scenery/14.jpeg"
         alt="Plant nursery collection" loading="lazy" /></div>
-    <div class="pan-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.22 (1).jpeg" alt="Garden pathway"
+    <div class="pan-img"><img src="images/People/21.jpeg" alt="Garden pathway"
         loading="lazy" /></div>
-    <div class="pan-img"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.19 (1).jpeg"
+    <div class="pan-img"><img src="images/People/47.jpeg"
         alt="Butterfly pea flowers on forest path" loading="lazy" /></div>
   </div>
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="videos-head reveal">
+      <div>
+        <p class="section-label" data-i18n="videos_label">Visual Stories</p>
+        <h2 class="section-title" data-i18n="videos_title">Experience it <em>in motion.</em></h2>
+      </div>
+      <p class="section-body" style="max-width:36ch" data-i18n="videos_sub">A glimpse into the rhythm of life at Nglanggeran — the river, the villas, and everything in between.</p>
+    </div>
+    <div class="videos-grid">
+      <div class="video-item reveal">
+        <video src="images/video/50.mp4" playsinline muted loop preload="metadata"></video>
+        <button class="video-zoom-btn" aria-label="Zoom video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+        <div class="video-overlay">
+          <button class="video-play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+          </button>
+        </div>
+        <span class="video-caption" data-i18n="vid1_caption">The River Path</span>
+      </div>
+      <div class="video-item reveal reveal-delay-1">
+        <video src="images/video/54.mp4" playsinline muted loop preload="metadata"></video>
+        <button class="video-zoom-btn" aria-label="Zoom video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+        <div class="video-overlay">
+          <button class="video-play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+          </button>
+        </div>
+        <span class="video-caption" data-i18n="vid2_caption">Morning Light</span>
+      </div>
+      <div class="video-item reveal reveal-delay-2">
+        <video src="images/Pure Exterior/56.mp4" playsinline muted loop preload="metadata"></video>
+        <button class="video-zoom-btn" aria-label="Zoom video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+        <div class="video-overlay">
+          <button class="video-play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+          </button>
+        </div>
+        <span class="video-caption" data-i18n="vid3_caption">Villa Gardens</span>
+      </div>
+      <div class="video-item reveal reveal-delay-3">
+        <video src="images/video/53.mp4" playsinline muted loop preload="metadata"></video>
+        <button class="video-zoom-btn" aria-label="Zoom video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+        <div class="video-overlay">
+          <button class="video-play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+          </button>
+        </div>
+        <span class="video-caption" data-i18n="vid4_caption">Village Life</span>
+      </div>
+    </div>
+  </section>
 
   <!-- AMENITIES -->
   <section id="amenities">
@@ -250,7 +494,7 @@
     <div class="amenities-grid">
 
       <div class="amenity-card reveal">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.30.jpeg"
+        <div class="amenity-photo"><img src="images/Pure Exterior/29.jpeg"
             alt="Villa nestled in tropical greenery" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -264,7 +508,7 @@
       </div>
 
       <div class="amenity-card reveal reveal-delay-1">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.29 (1).jpeg"
+        <div class="amenity-photo"><img src="images/Nature Scenery/26.jpeg"
             alt="River view from the property" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -279,7 +523,7 @@
       </div>
 
       <div class="amenity-card reveal reveal-delay-2">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.15.jpeg"
+        <div class="amenity-photo"><img src="images/Pure interior/3.jpeg"
             alt="Riverside dining terrace" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -296,7 +540,7 @@
       </div>
 
       <div class="amenity-card reveal">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.18 (1).jpeg"
+        <div class="amenity-photo"><img src="images/Nature Scenery/45.jpeg"
             alt="Plantation gardens" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -310,7 +554,7 @@
       </div>
 
       <div class="amenity-card reveal reveal-delay-1">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.24 (1).jpeg"
+        <div class="amenity-photo"><img src="images/People/31.jpeg"
             alt="Open gathering space" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -325,7 +569,7 @@
       </div>
 
       <div class="amenity-card reveal reveal-delay-2">
-        <div class="amenity-photo"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.30 (1).jpeg"
+        <div class="amenity-photo"><img src="images/People/18.jpeg"
             alt="Traditional Javanese villa interior" loading="lazy" /></div>
         <div class="amenity-body">
           <svg class="amenity-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -344,9 +588,9 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="exp-img-stack reveal">
-      <div class="img-main"> <img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.17.jpeg"
+      <div class="img-main"> <img src="images/Nature Scenery/5.jpeg"
           alt="Panoramic garden terrace overlooking the forest" loading="lazy" /></div>
-      <div class="img-accent"><img src="images/temporary/WhatsApp Image 2026-03-24 at 23.06.14.jpeg"
+      <div class="img-accent"><img src="images/People/35.jpeg"
           alt="Terrace dining overlooking rice paddies" loading="lazy" /></div>
     </div>
     <div class="reveal reveal-delay-1">
@@ -409,6 +653,36 @@
             class="booking-villa-card">
             <div class="bv-info"><span class="bv-name" data-i18n="villa6">Villa Ulin</span><span class="bv-detail"
                 data-i18n="bv6_detail">Riverside · 4 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa7">Villa Jati</span><span class="bv-detail"
+                data-i18n="bv7_detail">Riverside · 4 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa8">Villa Meranti</span><span class="bv-detail"
+                data-i18n="bv8_detail">Garden · 4 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa9">Villa Cendana</span><span class="bv-detail"
+                data-i18n="bv9_detail">Riverside · 6 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa10">Villa Ketapang</span><span class="bv-detail"
+                data-i18n="bv10_detail">Garden · 4 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa11">Villa Flamboyan</span><span class="bv-detail"
+                data-i18n="bv11_detail">Riverside · 4 guests</span></div><span class="bv-airbnb-btn"><span
+                data-i18n="villa_book">Book on Airbnb</span></span>
+          </a>
+          <a href="#booking" class="booking-villa-card">
+            <div class="bv-info"><span class="bv-name" data-i18n="villa12">Villa Akasia</span><span class="bv-detail"
+                data-i18n="bv12_detail">Riverside · 6 guests</span></div><span class="bv-airbnb-btn"><span
                 data-i18n="villa_book">Book on Airbnb</span></span>
           </a>
         </div>
@@ -483,6 +757,9 @@
 
   <!-- CONTACT -->
   <section id="contact">
+    <div class="contact-bg">
+      <img src="images/Nature Scenery/37.jpeg" alt="" aria-hidden="true" loading="lazy" />
+    </div>
     <div class="reveal">
       <p class="section-label" data-i18n="contact_label">Get in Touch</p>
       <h2 class="section-title" data-i18n="contact_title">Let's <em>connect.</em></h2>
@@ -576,6 +853,46 @@
         <button class="modal-close" onclick="closeTerms()">&#x2715;</button>
       </div>
       <div class="modal-body" id="termsBody"></div>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog">
+    <div class="video-modal-content" id="videoModalContent">
+      <video id="modalVideo" src="" playsinline></video>
+      
+      <div class="custom-video-controls" id="customVideoControls">
+        <div class="cv-bottom-bar">
+          <button class="cv-btn cv-play" id="cvPlayBtn" aria-label="Play/Pause">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          
+          <div class="cv-time-display">
+            <span id="cvCurrentTime">0:00</span>/<span id="cvDuration">0:00</span>
+          </div>
+          <input type="range" class="cv-progress" id="cvProgress" value="0" min="0" max="100" step="0.1" aria-label="Seek video">
+          
+          <div class="cv-volume-group">
+            <button class="cv-btn cv-mute" id="cvMuteBtn" aria-label="Mute/Unmute">
+              <svg class="icon-vol-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <svg class="icon-vol-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            </button>
+            <div class="cv-volume-dropdown">
+              <input type="range" class="cv-volume-slider" id="cvVolume" value="1" min="0" max="1" step="0.05" aria-label="Volume">
+            </div>
+          </div>
+
+          <button class="cv-btn cv-zoomout" id="cvZoomOutBtn" aria-label="Zoom Out">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 14 10 14 10 20"/>
+              <polyline points="20 10 14 10 14 4"/>
+              <line x1="14" y1="10" x2="21" y2="3"/>
+              <line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
