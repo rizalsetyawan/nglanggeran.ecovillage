@@ -51,7 +51,7 @@ const translations = {
     am6_desc: "Walk through the village, visit the local market, or chat with the neighbors. This isn't a resort — it's a real place, and that's what makes it interesting.",
 
     villas_label: "The Collection",
-    villas_title: "Twelve villas, one river.",
+    villas_title: "Eight villas, one river.",
     villas_sub: "Each villa has its own character — different layout, different view — but they all share the same river and the same quiet.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -60,12 +60,9 @@ const translations = {
     villa5: "Villa Damar",
     villa6: "Villa Ulin",
     villa7: "Villa Jati",
-    villa8: "Villa Meranti",
-    villa9: "Villa Cendana",
-    villa10: "Villa Ketapang",
-    villa11: "Villa Flamboyan",
-    villa12: "Villa Akasia",
+    villa8: "Villa Glugu",
     villa_book: "Book on Airbnb",
+    villa_upcoming: "Upcoming on Airbnb",
 
     bv1_detail: "Riverside · 4 guests",
     bv2_detail: "Riverside · 4 guests",
@@ -75,10 +72,6 @@ const translations = {
     bv6_detail: "Riverside · 4 guests",
     bv7_detail: "Riverside · 4 guests",
     bv8_detail: "Garden · 4 guests",
-    bv9_detail: "Riverside · 6 guests",
-    bv10_detail: "Garden · 4 guests",
-    bv11_detail: "Riverside · 4 guests",
-    bv12_detail: "Riverside · 6 guests",
 
     booking_label: "Reservations",
     booking_title: "Reserve your retreat.",
@@ -182,7 +175,7 @@ const translations = {
     am6_desc: "Jalan-jalan di desa, kunjungi pasar lokal, atau ngobrol dengan tetangga. Ini bukan resor — ini tempat nyata, dan itu yang bikin menarik.",
 
     villas_label: "Koleksi Vila",
-    villas_title: "Dua belas vila, satu sungai.",
+    villas_title: "Delapan vila, satu sungai.",
     villas_sub: "Setiap vila punya karakternya sendiri — beda tata letak, beda pemandangan — tapi semuanya berbagi sungai dan ketenangan yang sama.",
     villa1: "Villa Trembesi",
     villa2: "Villa Mahoni",
@@ -191,12 +184,9 @@ const translations = {
     villa5: "Villa Damar",
     villa6: "Villa Ulin",
     villa7: "Villa Jati",
-    villa8: "Villa Meranti",
-    villa9: "Villa Cendana",
-    villa10: "Villa Ketapang",
-    villa11: "Villa Flamboyan",
-    villa12: "Villa Akasia",
+    villa8: "Villa Glugu",
     villa_book: "Pesan di Airbnb",
+    villa_upcoming: "Segera di Airbnb",
 
     bv1_detail: "Tepi sungai · 4 tamu",
     bv2_detail: "Tepi sungai · 4 tamu",
@@ -206,10 +196,6 @@ const translations = {
     bv6_detail: "Tepi sungai · 4 tamu",
     bv7_detail: "Tepi sungai · 4 tamu",
     bv8_detail: "Taman · 4 tamu",
-    bv9_detail: "Tepi sungai · 6 tamu",
-    bv10_detail: "Taman · 4 tamu",
-    bv11_detail: "Tepi sungai · 4 tamu",
-    bv12_detail: "Tepi sungai · 6 tamu",
 
     booking_label: "Reservasi",
     booking_title: "Pesan tempatmu.",
@@ -535,7 +521,15 @@ document.getElementById('termsModal').addEventListener('click', function (e) {
     cards.forEach(c => {
       c.style.width = cardW + 'px';
       c.style.flexShrink = '0';
+      c.style.marginLeft = '0';
     });
+
+    const remainder = cards.length % PER_PAGE;
+    if (remainder > 0 && remainder < PER_PAGE) {
+      const emptySpace = (PER_PAGE - remainder) * (cardW + GAP_PX);
+      const firstCardOfLastPage = cards[cards.length - remainder];
+      firstCardOfLastPage.style.marginLeft = (emptySpace / 2) + 'px';
+    }
 
     // Snap to current page without animation
     const pageW = vw + GAP_PX;

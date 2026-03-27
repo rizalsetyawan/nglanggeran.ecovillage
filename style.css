@@ -380,16 +380,7 @@ section {
   position: relative;
 }
 
-.section-label::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 1px;
-  background: var(--accent);
-}
+
 
 .section-title {
   font-family: var(--ff-display);
@@ -401,14 +392,7 @@ section {
   position: relative;
 }
 
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  margin-top: 1.5rem;
-}
+
 
 .section-title em {
   font-style: italic;
