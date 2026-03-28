@@ -2313,9 +2313,16 @@ footer {
     gap: 3rem;
   }
 
+  #booking { padding: 4rem 5%; }
   .booking-inner {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 1.5rem;
+    width: 100%;
+    /* removed overflow-x: hidden as it can clip content */
+  }
+
+  .booking-form-card {
+    padding: 1.5rem; /* Reduce padding on mobile to prevent cropping */
   }
 
   /* OR divider → horizontal on mobile */
@@ -2323,6 +2330,7 @@ footer {
     flex-direction: row;
     padding: 0;
     margin: 2.5rem 0;
+    width: 100%; /* Ensure it spans the full width without breaking */
   }
 
   .or-line {
@@ -2353,8 +2361,9 @@ footer {
   }
 
   .panorama-strip {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid so photos don't disappear */
     height: auto;
+    gap: 0.5rem;
   }
 
   .pan-img {
@@ -2363,7 +2372,7 @@ footer {
 
   .panorama-strip .pan-img:nth-child(3),
   .panorama-strip .pan-img:nth-child(4) {
-    display: none;
+    display: block; /* overridden from display: none to fix missing images */
   }
 }
 
@@ -2377,11 +2386,12 @@ footer {
   }
 
   .about-photo-strip {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* Stack to prevent images disappearing */
+    gap: 1.5rem;
   }
 
   .about-photo-strip .strip-img:last-child {
-    display: none;
+    display: block; /* overridden from display: none */
   }
 
   .stats-row {
@@ -2394,6 +2404,10 @@ footer {
 
   .videos-grid {
     grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr; /* Stack form fields so they don't crop */
+    gap: 1rem;
   }
 }
 
